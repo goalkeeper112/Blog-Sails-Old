@@ -1,0 +1,14 @@
+<div class="container">
+	<ul class="list-group">
+	<% _.each(posts, function(post){ %>
+	<div class="jumbotron">
+		<li class="list-group-item">
+			<h1><a class="label label-info" href="findPost?titulo=<%= post.titulo %>"><%= post.titulo %></a></h1><br>
+			<h2>Escrito Por: <%= post.author %></h2>
+			<p><%= post.contenido %></p>
+		</li>
+	</div>
+	<% }) %>
+		
+	</ul>
+</div>

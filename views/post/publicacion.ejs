@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row-fluid jumbotron " align="center">
+		<div class="page-header">
+			<h1>Crear un Post Nuevo</h1>
+		</div>
+		<form method="post" action="/publicar">
+			<div class="input-group">
+				<label for="titulo" > Titulo</label>
+				<div class="controls">
+					<input name="titulo" type="text" placeholder="Ingresa tú titulo" class="form-control" />
+				</div>
+			</div>
+			<div class="input-group">
+				<label for="contenido">Contenido</label>
+				<div class="controls">
+					<input type="text-area" name="contenido" placeholder="Escribe tú post aquí" class="form-control" />
+				</div>
+			</div>
+			<br>
+			<div class="control-group">
+					<input type="hidden" value="<%= req.session.user %>" name="author">
+					<input type="submit" value="Entrar" class="btn btn-success btn-lg" />
+			</div>
+		</form>
+	</div>
+</div>

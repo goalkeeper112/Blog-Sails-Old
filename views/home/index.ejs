@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="jumbotron text-center">
+        <div class="page-header">
+            <h1>BlogSails!</h1>
+        </div>
+        <h2>Un blog desarrollado con Node.JS</h2>
+
+        <% if(! req.session.user) { %>
+        	<a href="/loguearse" class="btn btn-lg btn-success" align="right">Entrar</a> <a href="/registrarse" align="left" class="btn btn-lg btn-info">Registrarse</a>
+        <% } %>
+
+        <% if(req.session.user) { %>
+
+        <h1><a href="user?username=<%= req.session.user %>" class="label label-lg label-info"><%= req.session.user %></a></h1>
+
+        <% } %>
+    </div>
+</div>
+
+<div class="container">
+	<ul class="list-group">
+	<% _.each(posts, function(post){ %>
+	<div class="jumbotron">
+		<li class="list-group-item">
+			<h1><a class="label label-info" href="findPost?titulo=<%= post.titulo %>"><%= post.titulo %></a></h1><br>
+			<h2>Escrito Por: <%= post.author %></h2>
+			<p><%= post.contenido %></p>
+		</li>
+	</div>
+	<% }) %>
+		
+	</ul>
+</div>
